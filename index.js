@@ -11,6 +11,18 @@ const tutorials = [
   'what is JSONP?'
 ];
 
+//Input: what does the this keyword mean? 
 const titleCased = () => {
-  return tutorials
+  return tutorials.map((titles) => {
+    let arrayOfWords = titles.split(' ');
+    let newCasedArray = arrayOfWords.map(word => {
+      let firstLetter = word.slice(0,1);
+      let upperCasedLetter = firstLetter.toUpperCase()
+      word = upperCasedLetter+word.slice(1);
+      return word
+    })
+    newCasedArray = newCasedArray.join(' ');
+    return newCasedArray
+  })
 }
+//Output: What Does The This Keyword Mean?.
